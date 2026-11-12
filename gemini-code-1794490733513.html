@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberCut - Estilo & Precisión</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+      --primary-color: #1c355e;
+      --primary-hover: #142645;
+      --accent-color: #d9534f;
+      --text-main: #2b2b2b;
+      --text-muted: #666666;
+      --bg-light: #ffffff;
+      --bg-alt: #f8fafc;
+      --border-color: #e2e8f0;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 20px 40px rgba(28, 53, 94, 0.12);
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    html {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .top-bar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        background-color: var(--bg-alt);
+        width: 180px;
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 6px 14px;
+        transition: 0.2s;
+    }
+
+    .search-box:focus-within {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(28, 53, 94, 0.1);
+      width: 210px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      width: 100%;
+      color: var(--text-main);
+    }
+
+    .search-box i {
+      color: var(--primary-color);
+      font-size: 13px;
+    }
+
+    .logo-container {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .logo-container a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-weight: 900;
+      font-size: 28px;
+      color: var(--primary-color);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-img {
+      max-height: 110px;
+      width: auto;
+      display: block;
+      transition: max-height 0.3s ease;
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-self: end;
+    }
+
+    .user-actions a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s ease;
+    }
+
+    .user-actions a:hover {
+      color: var(--primary-color);
+    }
+
+    .user-actions .btn-login-outline {
+      border: 1px solid var(--primary-color);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--primary-color);
+    }
+
+    .user-actions .btn-login-outline:hover {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    .user-actions .divider {
+      color: var(--border-color);
+      font-size: 12px;
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .header.scrolled {
+      padding: 8px 40px;
+      box-shadow:
